@@ -396,3 +396,4 @@ FodyWeavers.xsd
 
 # JetBrains Rider
 *.sln.iml
+/Promact.CustomerSuccessPlatform.App/appsettings.Development.json
