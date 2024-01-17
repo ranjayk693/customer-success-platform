@@ -8,8 +8,6 @@
         public required ApplicationUser CreatedBy { get; set; }
         public required DateTime CreatedDateTime { get; set; }
         public ApplicationUser? ApprovedBy { get; set; }
-        public DateTime? ApprovedDateTime { get; set; }
-        public required ApplicationUser ModifiedBy { get; set; }
-        public required DateTime ModifiedDateTime { get; set; }
+        public DateTime? ApprovedDateTime { get; set; }        
     }
 }
