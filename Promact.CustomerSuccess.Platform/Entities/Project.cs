@@ -12,8 +12,8 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public virtual ICollection<EscalationMatrix>? EscalationMatrices { get; set; }
         public virtual ICollection<RiskProfile>? RiskProfiles { get; set; }
         public virtual ICollection<PhaseMilestone>? PhaseMilestones { get; set; }
-        public virtual ICollection<Resource> Resources { get; set; } = new List<Resource>();
-        public virtual ICollection<ClientFeedback> ClientFeedbacks { get; set; } = new List<ClientFeedback>();
-        public virtual ICollection<MeetingMinute> MeetingMinutes { get; set; } = new List<MeetingMinute>();
+        public virtual ICollection<ProjectResources>? Resources { get; set; }
+        public virtual ICollection<ClientFeedback>? ClientFeedbacks { get; set; }
+        public virtual ICollection<MeetingMinute>? MeetingMinutes { get; set; }
     }
 }
