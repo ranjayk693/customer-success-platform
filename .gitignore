@@ -262,3 +262,5 @@ Promact.CustomerSuccess.Platform/Logs/*
 # Use abp install-libs to restore.
 **/wwwroot/libs/*
 Logs/*
+/Promact.CustomerSuccess.Platform/appsettings.Development.json
+/Promact.CustomerSuccess.Platform/appsettings.Development.secrets.json

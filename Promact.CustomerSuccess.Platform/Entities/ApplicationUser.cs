@@ -26,7 +26,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
         [ForeignKey("Organization")]
         public Guid? TenantId { get; set; }
 
-        public virtual Organization? Organization { get; set; }
+        public virtual Organization? Organization { get; set; }        
 
         public ExtraPropertyDictionary ExtraProperties { get; set; }
     }

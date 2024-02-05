@@ -22,7 +22,8 @@ public class PlatformDbContextFactory : IDesignTimeDbContextFactory<PlatformDbCo
     {
         var builder = new ConfigurationBuilder()
             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json", optional: false);
+            .AddJsonFile("appsettings.json", optional: false)
+            .AddJsonFile($"appsettings.Development.json", optional: true);
 
         return builder.Build();
     }

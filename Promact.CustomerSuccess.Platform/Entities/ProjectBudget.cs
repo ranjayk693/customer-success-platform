@@ -3,7 +3,7 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Promact.CustomerSuccess.Platform.Entities
 {
-    public class ProjectBudget : AuditedEntityWithUser<ApplicationUser>
+    public class ProjectBudget : AuditedEntityWithUser<Guid, ApplicationUser>
     {
         [Required]
         public ProjectType Type { get; set; }

@@ -3,10 +3,10 @@ using Volo.Abp.Domain.Entities.Auditing;
 
 namespace Promact.CustomerSuccess.Platform.Entities
 {
-    public class RiskProfile : AuditedAggregateRootWithUser<ApplicationUser>
+    public class RiskProfile : AuditedAggregateRootWithUser<Guid, ApplicationUser>
     {
         [ForeignKey("Project")]
-        public int ProjectId { get; set; }
+        public Guid ProjectId { get; set; }
         public RiskType RiskType { get; set; }
         public RiskSeverity Severity { get; set; }
         public RiskImpact Impact { get; set; }        

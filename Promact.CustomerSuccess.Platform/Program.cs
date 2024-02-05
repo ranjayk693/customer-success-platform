@@ -38,6 +38,11 @@ public class Program
             builder.Host.AddAppSettingsSecretsJson()
                 .UseAutofac()
                 .UseSerilog();
+
+            builder.Configuration.AddJsonFile("appsettings.json", optional: false, reloadOnChange: true)
+                .AddJsonFile($"appsettings.{builder.Environment.EnvironmentName}.json", optional: true, reloadOnChange: true)
+                .AddEnvironmentVariables().AddCommandLine(args);
+
             if (IsMigrateDatabase(args))
             {
                 builder.Services.AddDataMigrationEnvironment();

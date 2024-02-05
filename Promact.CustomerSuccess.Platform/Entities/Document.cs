@@ -9,7 +9,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public required string Name { get; set; }
         public required string Description { get; set; }
         [ForeignKey(nameof(Project))]
-        public required int ProjectId { get; set; }
+        public required Guid ProjectId { get; set; }
         public virtual Project? Project { get; set; }
     }
 }
