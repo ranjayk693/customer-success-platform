@@ -9,10 +9,12 @@ namespace Promact.CustomerSuccess.Platform.Services.EmailServices
 {
     public class EmailService:IEmailService
     {
+        private readonly IConfiguration _config;
         private readonly EmailSender _emailSettings;
-        public EmailService(IOptions<EmailSender> options)
+        public EmailService(IOptions<EmailSender> options, IConfiguration config)
         {
             _emailSettings = options.Value;
+            _config = config;
         }
 
 
@@ -20,7 +22,7 @@ namespace Promact.CustomerSuccess.Platform.Services.EmailServices
         public async Task SendEmailAsync(EmailDto request)
         {
             var email = new MimeMessage();
-            email.Sender = MailboxAddress.Parse("ranjayk693social@gmail.com");
+            email.Sender = MailboxAddress.Parse(_config.GetValue<string>("EmailAuth:email"));
             email.To.Add(MailboxAddress.Parse(request.To));
             email.Subject = request.Subject;
             var builder = new BodyBuilder();
@@ -28,8 +30,8 @@ namespace Promact.CustomerSuccess.Platform.Services.EmailServices
             email.Body = builder.ToMessageBody();
 
             using var smtp = new SmtpClient();
-            smtp.Connect("smtp.gmail.com", 587, SecureSocketOptions.StartTls);
-            smtp.Authenticate("ranjayk693social@gmail.com", "pokd uice dvjf ffmm");
+            smtp.Connect(_config.GetValue<string>("EmailAuth:service"), 587, SecureSocketOptions.StartTls);
+            smtp.Authenticate(_config.GetValue<string>("EmailAuth:email"), _config.GetValue<string>("EmailAuth:password"));
             await smtp.SendAsync(email);
             smtp.Disconnect(true);
         }
