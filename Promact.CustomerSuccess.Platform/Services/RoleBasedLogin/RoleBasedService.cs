@@ -18,10 +18,6 @@ namespace Promact.CustomerSuccess.Platform.Services.RoleBasedLogin
             _roleReposatory = role;
         }
 
-
-
-
-
         [HttpPost]
         public async Task<Response> ValidateEmail(EmailValidateDto input)
         {
@@ -44,15 +40,6 @@ namespace Promact.CustomerSuccess.Platform.Services.RoleBasedLogin
                 };
                 return response;
             }
-            
         }
-        public class Response
-        {
-            public string message { get; set; }
-            public string email { get; set; }
-            public RoleType role { get; set; }
-            public bool isAuthentic { get; set; } = false;
-        }
-
     }
 }

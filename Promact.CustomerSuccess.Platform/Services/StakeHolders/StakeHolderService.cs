@@ -76,7 +76,6 @@ namespace Promact.CustomerSuccess.Platform.Services.StakeHolders
             {
                 Console.WriteLine(ex.ToString());
             }
-
             return stakeHolderDto;
         }
     }
