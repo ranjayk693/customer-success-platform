@@ -2,7 +2,6 @@
 {
     public class CreateClientFeedbackDto
     {
-
         public Guid ProjectId { get; set; }
         public FeedbackType FeedbackType { get; set; }
         public DateTime DateReceived { get; set; }

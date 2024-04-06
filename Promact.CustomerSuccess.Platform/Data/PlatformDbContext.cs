@@ -20,7 +20,6 @@ public class PlatformDbContext : AbpDbContext<PlatformDbContext>
     }
 
     public DbSet<ApprovedTeam> approvedTeams { get; set; }
-   
     public DbSet<RoleBased>roleBased { get; set; }
     public DbSet<VersionHistory> versionHistory { get; set; }
     public DbSet<StakeHolder> stakeHolder { get; set; }

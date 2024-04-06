@@ -5,8 +5,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
 {
     public class ApprovedTeam : AggregateRoot<Guid>
     {
-        
-        public int NoOfResources { set; get; }
+         public int NoOfResources { set; get; }
         public string Role {  set; get; }
         public string Availability {  set; get; }
         public int Duration {  set; get; }  

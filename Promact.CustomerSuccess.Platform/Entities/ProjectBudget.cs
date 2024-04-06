@@ -9,9 +9,7 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public ProjectType Type { get; set; }
         public int? DurationInMonths { get; set; }
         public int? BudgetedHours { get; set; }
-        //public int? ContractDuration { get; set; }
-        //public required double BudgetedCost { get; set; }
-        //public required string Currency { get; set; }
+
         [ForeignKey(nameof(Project))]
         public Guid ProjectId { get; set; }
         public virtual Project? Project { get; set; }

@@ -7,7 +7,6 @@ namespace Promact.CustomerSuccess.Platform.Entities
         public string email { get; set; }
         public string password { get; set; }
         public RoleType role { get; set; }
-
         public bool IsAuthentic { get; set; }
     }
 }
